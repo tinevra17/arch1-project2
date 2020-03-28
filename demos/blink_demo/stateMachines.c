@@ -2,6 +2,18 @@
 #include "stateMachines.h"
 #include "led.h"
 
+void sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
+{
+  ledMode = (ledMode + 1) % 3;
+}
+
+void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
+{
+  pwmCount = (pwmCount + 1) & 3; 
+}
+
+
+
 char toggle_red()		/* always toggle! */
 {
   static char state = 0;
