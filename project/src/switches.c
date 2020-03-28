@@ -47,22 +47,22 @@ void switch_interrupt_handler(){
 
 
   if(button3){
-    led_state=0;
-    period = 30;
+    // led_state=0;
+    // period = 30;
 
-    led_changed = 1;
-    led_advance();
-    led_update();
-    switch_state_down = 1;
+    // led_changed = 1;
+    // led_advance();
+    // led_update();
+    // switch_state_down = 1;
   }
 
   if(button4){
-    led_state=0;
-    period = 30;
+    // led_state=0;
+    // period = 30;
 
-    led_changed = 1;
-    led_advance();
-    led_update();
-    switch_state_down = 1;
+    // led_changed = 1;
+    // led_advance();
+    // led_update();
+    // switch_state_down = 1;
   }
 }
