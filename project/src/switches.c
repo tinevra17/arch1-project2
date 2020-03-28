@@ -2,6 +2,7 @@
 #include "switches.h"
 #include "buzzer.h"
 #include "led.h"
+#include "stateMachine.h"
 
 
 char switch_state_down, switch_state_changed; /* effectively boolean */
@@ -38,12 +39,37 @@ void switch_interrupt_handler(){
     song();
   }
 
-    if(button2){
-     // led_state=0;
-      //song();
-      //led_changed = 1;
-      led_advance();
-      led_update();
-      led_advance();
+  if(button2){
+      led_state=0;
+    sound = 3000;
+    period = 30;
+    song();
+    led_changed = 1;
+    led_advance();
+    led_update();
+    switch_state_down = 1;
+  }
+
+
+  if(button3){
+    led_state=0;
+    sound = 3000;
+    period = 30;
+
+    led_changed = 1;
+    led_advance();
+    led_update();
+    switch_state_down = 1;
+  }
+
+  if(button4){
+    led_state=0;
+    sound = 3000;
+    period = 30;
+
+    led_changed = 1;
+    led_advance();
+    led_update();
+    switch_state_down = 1;
   }
 }
