@@ -43,8 +43,8 @@ void led_advance()
 
 void state()
 { 
-    // led_advance();
+    //led_advance();
      led_update();
-  enableWDTInterrupts();	/* enable periodic interrupt */
+  //enableWDTInterrupts();	/* enable periodic interrupt */
 
 }
