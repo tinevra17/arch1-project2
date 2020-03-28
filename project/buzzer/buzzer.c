@@ -20,11 +20,11 @@ void buzzer_init()
 
 void song()
 {
-  int notes[10] = {156.82,148.02,139.71,131.87,124.47,117.48,110.89,104.66,98.79,93.24};
+  int notes[10] = {880,988,1047,1175,1319,1397,0,880,1175,1567};
   int i = 0;
   for(i; i < 10; i++)
   {
-    buzzer_included(notes[i]);
+    buzzer_set_period(notes[i]);
     __delay_cycles(3000000);
   }
   buzzer_set_period(0);
