@@ -40,9 +40,9 @@ void switch_interrupt_handler(){
 
     if(button2){
      // led_state=0;
-      song();
+      //song();
       //led_changed = 1;
-      // led_advance();
-       led_update();
+      led_advance();
+       //led_update();
   }
 }
