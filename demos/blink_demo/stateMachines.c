@@ -2,61 +2,39 @@
 #include "stateMachines.h"
 #include "led.h"
 
-static char pwmCount = 0;
 
-static enum {zero=0, one=1} sup;
+// state variables 
+static enum {off=0, dim=1, bright=2} ledMode;
+static char pwmCount = 0;		
 
-
-void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
+void
+sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
 {
- sup = (sup + 1) % 2;
+  ledMode = (ledMode + 1) % 3;
 }
 
-
-
-char toggle_red()		/* always toggle! */
+void
+sm_fast_clock()	/* quickly cycle through 0...3 */
 {
-  static char state = 0;
+  pwmCount = (pwmCount + 1) & 3; 
+}
 
-  switch (state) {
-  case 0:
-    red_on = 1;
-    state = 1;
-    break;
-  case 1:
-    red_on = 0;
-    state = 0;
-    break;
+void 
+sm_update_led()
+{
+  char new_red_on;
+  switch (ledMode) {
+  case off:
+    new_red_on = 0; break;
+  case bright:
+    new_red_on = 1; break;
+  case dim:
+    new_red_on = (pwmCount < 1); break; /* 25% duty cycle */
   }
-  return 1;			/* always changes an led */
-}
-
-char toggle_green()	/* only toggle green if red is on!  */
-{
-  char changed = 0;
-  if (red_on) {
-    green_on ^= 1;
-    changed = 1;
+  if (red_on != new_red_on) {
+    red_on = new_red_on;
+    led_changed = 1;
   }
-  return changed;
 }
-
-
-void state_advance()		/* alternate between toggling red & green */
-{
-  char changed = 0;  
-
-  
-  switch (sup) {
-
-  case zero: changed = toggle_red() ; break;
-
-  case one: changed = toggle_green(); break;
-  }
-
-  led_changed = changed;
-  led_update();
-}
-
 
 
