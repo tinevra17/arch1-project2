@@ -38,9 +38,9 @@ void switch_interrupt_handler(){
     song();
   }
 
-    if(sw_button_2){
+    if(button2){
      // led_state=0;
-       song();
+      song();
       led_changed = 1;
       led_advance();
       led_update();
