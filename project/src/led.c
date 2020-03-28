@@ -2,6 +2,7 @@
 #include "led.h"
 #include "switches.h"
 #include "buzzer.h"
+#include "libTimer.h"
 
 unsigned char led_changed = 0, green_on=0, red_on=0, led_state=0;
 static char redVal[] = {0, LED_RED}, greenVal[] = {0, LED_GREEN};
@@ -45,4 +46,11 @@ void led_advance()
 {
   led_state+=1;
   led_changed = 1;
+}
+
+void state()
+{
+    configureClocks();		/* setup master oscillator, CPU & peripheral clocks */
+    led_init();
+    enableWDTInterrupts();
 }
