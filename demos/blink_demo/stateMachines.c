@@ -2,9 +2,11 @@
 #include "stateMachines.h"
 #include "led.h"
 
+static char pwmCount = 0;
+
 void sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
 {
-  ledMode = (ledMode + 1) % 3;
+  //ledMode = (ledMode + 1) % 3;
 }
 
 void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
