@@ -4,7 +4,7 @@
 #include "led.h"
 
 int main(void) {
-  configureClocks();		/* setup master oscillator, CPU & peripheral clocks */
+  //configureClocks();		/* setup master oscillator, CPU & peripheral clocks */
   led_init();
   enableWDTInterrupts();	/* enable periodic interrupt */
 
