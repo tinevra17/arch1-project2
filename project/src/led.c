@@ -51,7 +51,9 @@ void led_advance()
 void state()
 {
   //configureClocks();		/* setup master oscillator, CPU & peripheral clocks */
-  led_init();
+  //led_init();
+  led_advance();
+    led_update();
   enableWDTInterrupts();	/* enable periodic interrupt */
 
 }
