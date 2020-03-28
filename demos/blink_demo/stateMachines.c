@@ -9,7 +9,7 @@ static enum {zero=0, one=1} sup;
 
 void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
 {
- case = (case + 1) % 2;
+ sup = (sup + 1) % 2;
 }
 
 
