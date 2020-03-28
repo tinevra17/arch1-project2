@@ -9,4 +9,3 @@ clean:
 	(cd blink_demo && make clean)
 	(cd button_demo && make clean)
 	(cd buzzer_demo && make clean)
-
