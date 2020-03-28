@@ -3,15 +3,12 @@
 #include "led.h"
 
 static char pwmCount = 0;
+static enum {R=0, G=1} case = 1;
 
-void sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
-{
-  //ledMode = (ledMode + 1) % 3;
-}
 
 void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
 {
-  pwmCount = (pwmCount + 1) & 3; 
+ case = (case + 1) % 2;
 }
 
 
@@ -48,10 +45,12 @@ void state_advance()		/* alternate between toggling red & green */
 {
   char changed = 0;  
 
-  static enum {R=0, G=1} color = G;
-  switch (color) {
-  case R: changed = toggle_red(); color = G; break;
-  case G: changed = toggle_green(); color = R; break;
+  
+  switch (case) {
+
+  case 0: changed = toggle_red(); color = G; break;
+
+  case 1: changed = toggle_green(); color = R; break;
   }
 
   led_changed = changed;
