@@ -1,6 +1,6 @@
 #include <msp430.h>
 #include "switches.h"
-#include "buzzer.h"
+// #include "buzzer.h"
 
 char switch_state_down, switch_state_changed; /* effectively boolean */
 
