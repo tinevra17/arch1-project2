@@ -3,7 +3,7 @@
 #include "led.h"
 
 static char pwmCount = 0;
-static enum case = 1;
+static enum {zero=0, one=1, } case;
 
 
 void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
@@ -48,9 +48,9 @@ void state_advance()		/* alternate between toggling red & green */
   
   switch (case) {
 
-  case 0: changed = toggle_red() ; break;
+  case zero: changed = toggle_red() ; break;
 
-  case 1: changed = toggle_green(); break;
+  case one: changed = toggle_green(); break;
   }
 
   led_changed = changed;
