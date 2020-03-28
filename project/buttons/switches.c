@@ -30,7 +30,7 @@ switch_interrupt_handler()
 {
   char p1val = switch_update_interrupt_sense();
 
-  char button1 = (p1val & SW1) ? 0: 1;
+  char button1 = (p1val & SW2) ? 0: 1;
   //switch_state_down = (p1val & SW1) ? 0 : 1; /* 0 when SW1 is up */
 
   if(button1){
