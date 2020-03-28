@@ -25,14 +25,14 @@ void enableWDTInterrupts()
 
 void timerAUpmode()
 {
-  TA0CCR0 = 0; 
-  TA0CCR1 = 0; 
-  TA0CCTL1 = OUTMOD_3;		/* Toggle p1.6 when timer=count1 */
+  // TA0CCR0 = 0; 
+  // TA0CCR1 = 0; 
+  // TA0CCTL1 = OUTMOD_3;		/* Toggle p1.6 when timer=count1 */
   
-  // Timer A control:
-  //  Timer clock source 2: system clock (SMCLK)
-  //  Mode Control 1: continuously 0...CCR0
-  TACTL = TASSEL_2 + MC_1;   
+  // // Timer A control:
+  // //  Timer clock source 2: system clock (SMCLK)
+  // //  Mode Control 1: continuously 0...CCR0
+  // TACTL = TASSEL_2 + MC_1;   
 }
 
 
