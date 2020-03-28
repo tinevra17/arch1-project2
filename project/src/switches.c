@@ -43,6 +43,6 @@ void switch_interrupt_handler(){
       //song();
       //led_changed = 1;
       led_advance();
-       //led_update();
+      led_update();
   }
 }
