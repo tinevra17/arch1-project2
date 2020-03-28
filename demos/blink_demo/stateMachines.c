@@ -3,7 +3,7 @@
 #include "led.h"
 
 static char pwmCount = 0;
-static enum {zero=0, one=1, } case;
+static enum {zero=0, one=1 } case;
 
 
 void sm_fast_clock()		/* slowly cycle through {off, dim, bright} */
