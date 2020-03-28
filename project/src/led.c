@@ -19,15 +19,22 @@ void led_init()
 
 void led_update()
 {
-  if (led_changed) {
-    char ledFlags = redVal[red_on] | greenVal[green_on];
+  if (led_changed)
+  {
+    ledFlags=0;
+    if(!(led_state)){
+      ledFlags |= LED_RED;
+    }
+    else
+    {
+      ledFlags |= LED_GREEN;
+    }
     
     P1OUT &= (0xff^LEDS) | ledFlags; // clear bit for off leds
     P1OUT |= ledFlags;		     // set bit for on leds
     led_changed = 0;
   }
 }
-
 
 void led_toggle()
 {
@@ -43,8 +50,24 @@ void led_advance()
 
 void state()
 { 
-    //led_advance();
-     led_update();
+    led_advance();
+    led_update();
+  //enableWDTInterrupts();	/* enable periodic interrupt */
+
+}
+
+void state2()
+{ 
+    led_advance();
+    led_update();
+  //enableWDTInterrupts();	/* enable periodic interrupt */
+
+}
+
+void state3()
+{ 
+    led_advance();
+    led_update();
   //enableWDTInterrupts();	/* enable periodic interrupt */
 
 }
