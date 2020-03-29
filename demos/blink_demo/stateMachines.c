@@ -5,7 +5,7 @@
 
 // state variables 
 static enum {off=0, on=1, dim=2, } cases;
-static char pwmCount = 0;		
+static char count = 0;		
 
 void
 caseSwitcher()	
@@ -16,7 +16,7 @@ caseSwitcher()
 void
 fast()	/* quickly cycle through 0...3 */
 {
-  pwmCount = (pwmCount + 1) % 3; 
+  count = (count + 1) % 3; 
 }
 
 void ledStates()
@@ -26,9 +26,9 @@ void ledStates()
   case off:
     greenB = 0; break; //off
   case on:
-    greenB = 1; break; //bright
+    greenB = 1; break; //on
   case dim:
-    greenB = (pwmCount < 1); break;  //dim
+    greenB = (count < 1); break;  //dim
   }
 
   if (green_on != greenB) {
