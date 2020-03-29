@@ -24,38 +24,3 @@ void led_update()
   }
 }
 
-// void led_toggle()
-// {
-//   led_state = 1 - led_state;
-//   led_changed = 1;
-// }
-
-// void led_advance()
-// {
-//   led_state+=1;
-//   led_changed = 1;
-// }
-
-// void state()
-// { 
-//     led_advance();
-//     led_update();
-//   //enableWDTInterrupts();	/* enable periodic interrupt */
-
-// }
-
-// void state2()
-// { 
-//     led_advance();
-//     led_update();
-//   //enableWDTInterrupts();	/* enable periodic interrupt */
-
-// }
-
-// void state3()
-// { 
-//     led_advance();
-//     led_update();
-//   //enableWDTInterrupts();	/* enable periodic interrupt */
-
-// }

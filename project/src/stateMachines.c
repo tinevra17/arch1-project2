@@ -37,4 +37,15 @@ void ledStates()
   }
 }
 
+void redLightOn()
+{
+  red_on = 1; 
+}
+
+void redLightOff()
+{
+  red_on = 1; 
+
+}
+
 

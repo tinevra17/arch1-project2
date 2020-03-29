@@ -36,24 +36,22 @@ void switch_interrupt_handler(){
   char button4 = (p2val & SW4) ? 0 : SW4;
 
   if(button1){
-
     song();
   }
 
   if(button2){
-
     enableWDTInterrupts();
-   
   }
 
 
   if(button3){
-     //blink();
+     redLightOn();
     
 
   }
 
   if(button4){
+    redLightOff();
 
   }
 }
