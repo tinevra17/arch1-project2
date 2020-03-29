@@ -47,7 +47,7 @@ void switch_interrupt_handler(){
 
 
   if(button3){
-     blink();
+     //blink();
     
 
   }
