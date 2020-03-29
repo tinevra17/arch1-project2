@@ -30,7 +30,7 @@ sm_update_led()
     greenB = (pwmCount < 5); break; 
   case three:
    //greenB = 1; break; 
-    greenB = (pwmCount < 1); break; 
+    greenB = (pwmCount < 10); break; 
   }
 
   if (green_on != greenB) {
