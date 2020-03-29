@@ -4,7 +4,7 @@
 
 
 // state variables 
-static enum {one=0, two=1, three=2, } cases;
+static enum {off=0, on=1, dim=2, } cases;
 static char pwmCount = 0;		
 
 void
@@ -23,11 +23,11 @@ void ledStates()
 {
   char greenB;
   switch (cases) {
-  case one:
+  case off:
     greenB = 0; break; //off
-  case two:
+  case on:
     greenB = 1; break; //bright
-  case three:
+  case dim:
     greenB = (pwmCount < 1); break;  //dim
   }
 
