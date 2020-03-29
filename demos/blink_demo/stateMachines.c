@@ -10,10 +10,7 @@ static char pwmCount = 0;
 void
 sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
 {
-  if (ledMode == 4){
-    ledMode = 0;
-  }
-  ledMode = (ledMode + 1) ;
+  ledMode = (ledMode + 1) % 3;
 }
 
 void
