@@ -16,7 +16,7 @@ sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
 void
 sm_fast_clock()	/* quickly cycle through 0...3 */
 {
-  pwmCount = (pwmCount + 1) ; 
+  pwmCount = (pwmCount + 1) % 3; 
 }
 
 void 
