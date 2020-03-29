@@ -31,7 +31,8 @@ sm_update_led()
   case dim:
     // greenB = (pwmCount < 1); break; 
     // ledMode++;
-  }break;
+    char x;
+  }
 
   if (green_on != greenB) {
     green_on = greenB;
