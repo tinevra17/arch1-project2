@@ -17,7 +17,7 @@ void fast()
   if(count == 3){
     count = 0;
   }
-  count++
+  count++;
 
  // count = (count + 1) % 3; 
 }
