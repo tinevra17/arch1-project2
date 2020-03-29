@@ -22,17 +22,17 @@ sm_fast_clock()	/* quickly cycle through 0...3 */
 void 
 sm_update_led()
 {
-  char new_red_on;
+  char greenB;
   switch (ledMode) {
   case off:
-    new_red_on = 0; break;
+    greenB = 0; break;
   case bright:
-    new_red_on = 1; break;
+    greenB = 1; break;
   case dim:
-    new_red_on = (pwmCount < 1); break; /* 25% duty cycle */
+    greenB = (pwmCount < 1); break; /* 25% duty cycle */
   }
-  if (red_on != new_red_on) {
-    red_on = new_red_on;
+  if (green_on != greenB) {
+    green_on = greenB;
     led_changed = 1;
   }
 }
