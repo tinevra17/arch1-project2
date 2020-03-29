@@ -3,6 +3,6 @@
 
 void fast();		       
 void caseSwitcher();		
-void ledState();		
+void ledStates();		
 
 #endif // included
