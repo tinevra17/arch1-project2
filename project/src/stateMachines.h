@@ -8,5 +8,10 @@ char toggle_red();
 char toggle_green();
 char toggle_red_green();
 
+// void fast();		       
+// void caseSwitcher();		
+// void ledStates();		
+
+
 
 #endif // included
