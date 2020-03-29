@@ -9,7 +9,7 @@ void main(void)
   configureClocks();
   switch_init();
   buzzer_init();
-  song();
+  // song();
   // led_init();           
   // enableWDTInterrupts();
 

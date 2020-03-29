@@ -40,8 +40,8 @@ void switch_interrupt_handler(){
   }
 
   if(button2){
-    // blink()
-    // enableWDTInterrupts();
+    led_init();
+    enableWDTInterrupts();
    
   }
 
