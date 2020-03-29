@@ -1,7 +1,8 @@
 #include <msp430.h>
 #include "libTimer.h"
 #include "switches.h"
-// #include "buzzer.h"
+#include "buzzer.h"
+#include "led.h"
 
 void main(void) 
 {  
@@ -9,7 +10,6 @@ void main(void)
   switch_init();
   buzzer_init();
   led_init();           
-  //led_init();
 
   or_sr(0x18);  // CPU off, GIE on
 } 

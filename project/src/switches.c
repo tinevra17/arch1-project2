@@ -41,7 +41,7 @@ void switch_interrupt_handler(){
 
   if(button2){
     //blink
-    state();
+    enableWDTInterrupts();
    
   }
 
