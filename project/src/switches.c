@@ -40,29 +40,19 @@ void switch_interrupt_handler(){
   }
 
   if(button2){
-    //blink
-    //enableWDTInterrupts();
+    // blink()
+    // enableWDTInterrupts();
    
   }
 
 
   if(button3){
-    // led_state=0;
-    // period = 30;
+     blink();
+    
 
-    // led_changed = 1;
-    // led_advance();
-    // led_update();
-    // switch_state_down = 1;
   }
 
   if(button4){
-    // led_state=0;
-    // period = 30;
 
-    // led_changed = 1;
-    // led_advance();
-    // led_update();
-    // switch_state_down = 1;
   }
 }
