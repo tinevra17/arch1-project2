@@ -8,6 +8,6 @@ __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
     sm_slow_clock();
   }
   sm_fast_clock(); //makes led blin 
-  //sm_update_led();
-  led_update();
+  sm_update_led();
+  //led_update();
 }
