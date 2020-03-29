@@ -30,6 +30,7 @@ sm_update_led()
     greenB = 1; break;
   case dim:
     greenB = (pwmCount < 1); break; /* 25% duty cycle */
+    ledMode++;
 
   case dim2:
     greenB = (pwmCount < 4); break; /* 25% duty cycle */
