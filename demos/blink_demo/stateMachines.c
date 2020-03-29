@@ -4,7 +4,7 @@
 
 
 // state variables 
-static enum {off=0, dim=1, bright=2} ledMode;
+static enum {off=0, dim=1, bright=2, dim2=3, } ledMode;
 static char pwmCount = 0;		
 
 void
@@ -30,7 +30,11 @@ sm_update_led()
     greenB = 1; break;
   case dim:
     greenB = (pwmCount < 1); break; /* 25% duty cycle */
+
+  case dim2:
+    greenB = (pwmCount < 4); break; /* 25% duty cycle */
   }
+
   if (green_on != greenB) {
     green_on = greenB;
     led_changed = 1;
