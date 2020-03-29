@@ -36,13 +36,12 @@ void switch_interrupt_handler(){
   char button4 = (p2val & SW4) ? 0 : SW4;
 
   if(button1){
-    buzzer_init();
+
     song();
   }
 
   if(button2){
-    led_init();
-    song();
+
     enableWDTInterrupts();
    
   }
