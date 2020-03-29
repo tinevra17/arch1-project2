@@ -8,19 +8,18 @@ static enum {one=0, two=1, three=2, } cases;
 static char pwmCount = 0;		
 
 void
-caseSwitcher()		/* slowly cycle through {off, dim, bright} */
+caseSwitcher()	
 {
   cases = (cases + 1) % 3;
 }
 
 void
-sm_fast_clock()	/* quickly cycle through 0...3 */
+fast()	/* quickly cycle through 0...3 */
 {
   pwmCount = (pwmCount + 1) % 3; 
 }
 
-void 
-sm_update_led()
+void ledStates()
 {
   char greenB;
   switch (cases) {

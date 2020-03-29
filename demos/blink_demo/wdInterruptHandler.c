@@ -9,7 +9,7 @@ __interrupt_vec(WDT_VECTOR) WDT(){	/* 250 interrupts/sec */
     
     
   }
-  sm_fast_clock(); //makes led blink
-  sm_update_led();
+  fast(); //makes led blink
+  ledState();
   led_update();
 }
