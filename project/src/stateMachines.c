@@ -14,12 +14,7 @@ void caseSwitcher()
 
 void fast()
 {
-  if(count == 3){
-    count = 0;
-  }
-  count++;
-
- // count = (count + 1) % 3; 
+   count = (count + 1) % 2; 
 }
 
 void ledStates()
