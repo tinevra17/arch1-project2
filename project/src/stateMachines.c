@@ -44,7 +44,7 @@ void redLightOn()
 
 void redLightOff()
 {
-  red_on = 1; 
+  red_on = 0; 
 
 }
 
