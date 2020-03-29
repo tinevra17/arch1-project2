@@ -29,10 +29,10 @@ sm_update_led()
   case bright:
     greenB = 1; break;
   case dim:
-    greenB = (pwmCount < 1); break; 
-    ledMode++;
+    // greenB = (pwmCount < 1); break; 
+    // ledMode++;
   }
-  
+
   if (green_on != greenB) {
     green_on = greenB;
     led_changed = 1;
