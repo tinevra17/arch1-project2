@@ -4,13 +4,13 @@
 
 
 // state variables 
-static enum {off=0, dim=1, bright=2, dim2=3, } ledMode;
+static enum {one=0, two=1, three=2, } cases;
 static char pwmCount = 0;		
 
 void
 sm_slow_clock()		/* slowly cycle through {off, dim, bright} */
 {
-  ledMode = (ledMode + 1) % 3;
+  cases = (cases + 1) % 3;
 }
 
 void
@@ -23,13 +23,14 @@ void
 sm_update_led()
 {
   char greenB;
-  switch (ledMode) {
-  case off:
-    greenB = 0; break;
-  case bright:
-    greenB = 1; break;
+  switch (cases) {
+  case one:
+    greenB = 0; break; //off
+  case two:
+    greenB = 1; break; 
   case dim:
-    greenB = (pwmCount < 1); break; 
+   greenB = 1; break; 
+    //greenB = (pwmCount < 1); break; 
   }
 
   if (green_on != greenB) {
