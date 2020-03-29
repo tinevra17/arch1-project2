@@ -25,7 +25,7 @@ sm_update_led()
   char greenB;
   switch (cases) {
   case one:
-    red_on = 0;
+    red_on = (pwmCount < 1);
     greenB = 0; break; //off
    
   case two:
