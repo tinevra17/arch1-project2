@@ -25,12 +25,13 @@ sm_update_led()
   char greenB;
   switch (cases) {
   case one:
+    red_on = 0;
     greenB = 0; break; //off
+   
   case two:
-    greenB = (pwmCount < 5); break; 
+    greenB = (pwmCount < 5); break; //bright
   case three:
    red_on = 1;
-
     greenB = (pwmCount < 1); break; 
   }
 
